@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Hello</title>
+
+
+</head>
+
+<body>
+
+<form th:action="@{/processPersonForm}" method="POST">
+
+    First name : <input type="text" th:field="${person.firstName}">
+    <br/>
+    Last name : <input type="text" th:field="${person.lastName}">
+    <br/>
+    <input type="submit" value="Submit">
+
+</form>
+
+</body>
+
+</html>
