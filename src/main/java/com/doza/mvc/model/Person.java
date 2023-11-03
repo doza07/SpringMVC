@@ -6,6 +6,8 @@ public class Person {
     private String lastName;
     private String country;
 
+    private String favoriteLanguage;
+
     public Person() {
     }
 
@@ -32,5 +34,13 @@ public class Person {
 
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    public String getFavoriteLanguage() {
+        return favoriteLanguage;
+    }
+
+    public void setFavoriteLanguage(String favoriteLanguage) {
+        this.favoriteLanguage = favoriteLanguage;
     }
 }
