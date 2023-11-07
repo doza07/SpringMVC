@@ -3,43 +3,68 @@
 
 <head>
     <title>Hello</title>
-
-
+    <style>
+        .error {color:red}
+    </style>
 </head>
-
 <body>
-
 <form th:action="@{/processPersonForm}" method="POST">
 
     First name : <input type="text" th:field="${person.firstName}">
+    <span th:if="${#fields.hasErrors('person.firstName')}"
+          th:errors="*{person.firstName}"
+          class="error"></span>
+
     <br/>
+
     Last name : <input type="text" th:field="${person.lastName}">
+    <span th:if="${#fields.hasErrors('person.lastName')}"
+          th:errors="*{person.lastName}"
+          class="error"></span>
+
+    <br/>
+
+    Free passes : <input type="text" th:field="${person.freePasses}">
+    <span th:if="${#fields.hasErrors('person.freePasses')}"
+          th:errors="*{person.freePasses}"
+          class="error"></span>
+
+    <br/>
+
+    Postal Code : <input type="text" th:field="${person.postalCode}">
+    <span th:if="${#fields.hasErrors('person.postalCode')}"
+          th:errors="*{person.postalCode}"
+          class="error"></span>
 
     <br><br>
 
-    Country:
+<!--    Country:-->
 
-    <select th:field="*{person.country}">
+<!--    <select th:field="*{person.country}">-->
 
-        <option th:each="tempCountry : ${countries}" th:value="${tempCountry}" th:text="${tempCountry}"/>
-    </select>
+<!--        <option th:each="tempCountry : ${countries}" th:value="${tempCountry}" th:text="${tempCountry}"/>-->
+<!--    </select>-->
 
-    <br><br>
+<!--    <br><br>-->
 
-    Favorite Programming Language:
+<!--    Favorite Programming Language:-->
+<!--    <input type="radio" th:field="*{person.favoriteLanguage}"-->
+<!--           th:each="tempLang : ${languages}"-->
+<!--           th:value="${tempLang}"-->
+<!--           th:text="${tempLang}"/>-->
 
-    <input type="radio" th:field="*{person.favoriteLanguage}"
-                        th:each="tempLang : ${languages}"
-                        th:value="${tempLang}"
-                        th:text="${tempLang}"/>
+<!--    <br><br>-->
 
+<!--    Favoring Operating Systems:-->
+<!--    <input type="checkbox" th:field="*{person.favoriteSystems}"-->
+<!--           th:each="tempSystem : ${systems}"-->
+<!--           th:value="${tempSystem}"-->
+<!--           th:text="${tempSystem}"/>-->
 
-    <br><br>
+<!--    <br><br>-->
 
     <input type="submit" value="Submit">
 
 </form>
-
 </body>
-
 </html>

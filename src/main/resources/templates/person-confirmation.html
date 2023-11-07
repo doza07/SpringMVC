@@ -10,8 +10,18 @@
 
 The person is conformation: <span th:text="${person.firstName} + ' ' + ${person.lastName}"/>
 <br>
-Your country : <span th:text="${person.country}"/>
+Free passes: <span th:text="${person.freePasses}"/>
 <br>
-Your Favorite Language : <span th:text="${person.favoriteLanguage}"/>
+Postal Code: <span th:text="${person.postalCode}"/>
+<br>
+
+<!--Your country : <span th:text="${person.country}"/>-->
+<!--<br>-->
+<!--Your Favorite Language : <span th:text="${person.favoriteLanguage}"/>-->
+<!--<br>-->
+<!--Your Favorite System :-->
+<!--<ul>-->
+<!--    <li th:each="tempSystem : ${person.favoriteSystems}" th:text="${tempSystem}"/>-->
+<!--</ul>-->
 </body>
 </html>
