@@ -1,5 +1,6 @@
 package com.doza.mvc.model;
 
+import com.doza.mvc.validation.PhoneNumberRus;
 import jakarta.validation.constraints.*;
 
 import java.util.List;
@@ -22,6 +23,10 @@ public class Person {
     @NotNull(message = "is required")
     @Pattern(regexp = "^[a-zA-Z0-9]{5}", message = "only 5 chats or digits")
     private String postalCode;
+
+    @PhoneNumberRus
+    @NotNull(message = "Can't be empty")
+    private String phone;
 
     private String country;
     private String favoriteLanguage;
@@ -60,6 +65,14 @@ public class Person {
 
     public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getCountry() {

@@ -36,6 +36,13 @@
           th:errors="*{person.postalCode}"
           class="error"></span>
 
+    <br/>
+
+    Phone : <input type="text" th:field="${person.phone}">
+    <span th:if="${#fields.hasErrors('person.phone')}"
+          th:errors="*{person.phone}"
+          class="error"></span>
+
     <br><br>
 
 <!--    Country:-->
